@@ -1,0 +1,20 @@
+<?php
+/*
+ *酒店图片模型
+ */
+class GoodsRelationModel extends RelationModel{
+	//定义主表
+	protected $tableName='Goods';
+	//定义用户与用户信息表关联关系
+	protected $_link=>array(
+		'GoodsType'=>array(
+			'mapping_type'=>BELONGS_TO,
+			'foreign_key'=>'typeid',
+		),
+	);
+	
+
+
+}
+
+?>

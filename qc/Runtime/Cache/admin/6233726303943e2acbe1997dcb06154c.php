@@ -1,0 +1,97 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>修改广告</title>
+	<script language="javascript" type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+	<script type="text/javascript" src='__PUBLIC__/js/jquery.js'></script>
+	<script type="text/javascript" src='__PUBLIC__/js/top.js'></script>
+	<link rel="stylesheet" href="__PUBLIC__/Css/common.css" />
+	<link rel="stylesheet" href="__PUBLIC__/Uploadify/uploadify.css"/>
+	<script type="text/javascript" src='__PUBLIC__/Js/jquery-1.8.2.min.js'></script>
+	<script type="text/javascript" src='__PUBLIC__/Js/common.js'></script>
+	<script type="text/javascript" src='__PUBLIC__/Js/pic.js'></script>
+	<script type="text/javascript" src='__PUBLIC__/Uploadify/jquery.uploadify.min.js'></script>
+	
+	<link rel="stylesheet" href="__PUBLIC__/editor/themes/default/default.css" />
+	<script type='text/javascript'>
+		var PUBLIC = '__PUBLIC__';
+		var uploadUrl = '<?php echo U("Common:uploadAdver");?>';
+		var sid = '<<?php echo session_id();?>>';
+		var UPLOAD = '__UPLOAD__';
+    </script>
+<script type='text/javascript'>
+	window.UEDITOR_HOME_URL = '__ROOT__/Data/Ueditor/';
+	window.onload = function (){
+		window.UEDITOR_CONFIG.initialFrameWidth=1200;
+		window.UEDITOR_CONFIG.initialFrameHeight=600;
+		window.UEDITOR_CONFIG.imageUrl="<?php echo U(GROUP_NAME.'/Hotel/upload');?>"             //图片上传提交地址
+        window.UEDITOR_CONFIG.imagePath='__ROOT__/uploads/';  
+		UE.getEditor("content");
+	}
+</script>
+<script type="text/javascript" src="__ROOT__/Data/Ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="__ROOT__/Data/Ueditor/ueditor.all.min.js"></script>
+</head>
+<body>
+	<div class='status'>
+		<span>修改广告</span>
+	</div>
+	<form action="<?php echo U('sendAdver');?>" method='post'>
+		<table class="table">
+			<tr>
+				<td width='25%' align='right'>广告名称：</td>
+				<td>
+					<input type="text" name='name' value="<?php echo ($Adver["0"]["name"]); ?>"/>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">开始时间：</td>
+				<td>
+					<input class="Wdate" type="text" onClick="WdatePicker()" name="startime" value="<?php echo ($Adver["0"]["startime"]); ?>">
+				</td>
+			</tr>
+			<tr>
+				<td align='right'>结束时间：</td>
+				<td>
+					<input class="Wdate" type="text" onClick="WdatePicker()" name="endtime" value="<?php echo ($Adver["0"]["endtime"]); ?>">
+				</td>
+			</tr>
+			<tr>
+				<td align='right'>广告位置：</td>
+				<td>
+					<select name="option" id="">
+					<option value="<?php echo ($Adver["0"]["option"]); ?>"><?php echo ($Adver["0"]["option"]); ?></option>
+					
+						<option value="幻灯片">幻灯片</option>
+						<option value="banner">banner</option>
+						<option value="票务位置">票务位置</option>
+					</select>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td align='right'>广告预览：</td>
+				<td>
+					<input type="file" name='pic' id='pic' />
+					<input type="hidden" name='face180' value=''/>
+                    <input type="hidden" name='face80' value=''/>
+                    <input type="hidden" name='face50' value=''/>
+				</td>
+			</tr>
+			
+			
+			<tr>
+				<td colspan='2'>
+					<input type="hidden" name='face180' value='<?php echo ($Adver["0"]["max"]); ?>'/>
+                    <input type="hidden" name='face80' value='<?php echo ($Adver["0"]["medium"]); ?>'/>
+                    <input type="hidden" name='face50' value='<?php echo ($Adver["0"]["mini"]); ?>'/>
+					<input type="hidden" name='id' value='<?php echo ($Adver["0"]["id"]); ?>'/>
+					<input type="submit" value='确认添加'  class='big-btn'/>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

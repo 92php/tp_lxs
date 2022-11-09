@@ -1,0 +1,46 @@
+<include file='Common:head'/>
+<!--中部 start-->
+<div class="hotel">
+	<!--当前位置 start-->
+	<div class="xianlu_option"><h6>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="#">线路预定</a></h6></div>
+	<!--当前位置 end-->
+	<!--条件搜索 start-->
+	
+	<!--条件搜索 end-->
+	<!--内容 start-->
+		<div class="xianlu_list">
+		<!--第一行start-->
+			<if condition='$list'>
+			<volist name='list' id='v'>
+			<div class="list_line">
+				<div class="list_line_pic"><img src='<if condition='$v["max"]'>
+                            __ROOT__/uploads/Pic/{$v.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/></div>
+				<div class="list_line_word">
+					<h2><a href="{:U(GROUP_NAME.'/Circuit/cirShow', array('id' => $v['id']))}">{$v.title}</a></h2>
+					出发城市：<span>{$v.city}</span>交通方式：<span>{$v.transportation}</span>行程天数：<span>{$v.tourtime}天</span>预定电话：<span>{$v.telme}</span>
+					<p>{$v.about}</p>
+					<a href="{:U(GROUP_NAME.'/Circuit/cirShow', array('id' => $v['id']))}" class="button">查看详情>></a>
+				</div>
+			</div>
+			</volist>
+			<else/>
+			暂无内容
+			</if>
+		<!--第一行end-->
+		
+		<!-----------分页start---------->
+			<div class="list_page"><p>{$page}</p></div>
+		<!-----------分页end---------->
+		</div>
+	<!--内容 end-->
+<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</div>
+<!--中部 end-->
+
+</body>
+</html>

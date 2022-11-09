@@ -1,0 +1,39 @@
+<block name="title"><title>{$system.0.WEBNAME}</title></block>
+<include file='Common:head'/>
+<!--中部 start-->
+<div class="hotel">
+	<!--当前位置 start-->
+	<div class="foshi_option"><h6>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="{:U(GROUP_NAME.'/Buddhist/index')}">佛事活动</a></h6></div>
+	<!--当前位置 end-->
+	
+	<!--内容 start-->
+		<div class="xianlu_list">
+		<volist name="Budd" id="v">
+		<!--第一行start-->
+			<div class="list_line">
+				<div class="list_line_pic"><img src='<if condition='$v["max"]'>
+                            __ROOT__/uploads/Pic/{$v.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/></div>
+				<div class="list_line_word">
+					<h2><a href="{:U(GROUP_NAME.'/Buddhist/buddShow', array('id' => $v['id']))}">{$v.title}</a></h2>
+					<p>{$v.about}</p>
+					<a href="{:U(GROUP_NAME.'/Buddhist/buddShow', array('id' => $v['id']))}" class="button">查看详情>></a>
+				</div>
+			</div>
+		<!--第一行end-->
+		</volist>
+		<!-----------分页start---------->
+			<div class="list_page"><p>{$page}</p></div>
+		<!-----------分页end---------->
+		</div>
+	<!--内容 end-->
+
+</div>
+<!--中部 end-->
+	<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>

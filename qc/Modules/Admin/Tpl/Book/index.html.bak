@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>定单列表</title>
+	<link rel="stylesheet" href="__PUBLIC__/Css/common.css" />
+	<script type="text/javascript" src='__PUBLIC__/Js/jquery-1.8.2.min.js'></script>
+	<script type="text/javascript" src='__PUBLIC__/Js/common.js'></script>
+</head>
+<body>
+	<div class='status'>
+		<span>订单列表</span>
+	</div>
+	<table class="table">
+		<tr>
+			
+			<th>ID</th>
+			<th>分类</th>
+			<th>订单号码</th>
+			<th>订单名称</th>
+			<th>订单备注</th>
+			<th>联系人</th>
+			<th>联系电话</th>
+			<th>配送地址</th>
+			<th>数量</th>
+			<th>付款状态</th>
+			<th>订单状态</th>
+			<th>下单时间</th>
+			<th>操作</th>
+		</tr>
+		<foreach name='list' item='v'>
+			<tr>
+				<td>{$v.id}</td>
+				<td>{$v.type}</td>
+				<td>{$v.booknum}</td>
+				<td>{$v.name}</td>
+				<td>{$v.note}</td>
+				<td>{$v.contact}</td>
+				<td>{$v.tel}</td>
+				<td>{$v.action}</td>
+				<td>{$v.number}</td>
+				<td><if condition='$v["buystatus"]'>已付款<else/>未付款</if></td>
+				<td><if condition='$v["bookstatus"]'>已发货<else/>未发货</if></td>
+				<td>{$v.addtime|date='y-m-d H:i', ###}</td>
+				<td style="width:165px;">
+					<div style="width:160px; margin:auto;">
+					<a href="{:U('delBook', array('id' => $v['id']))}" class='del'></a>
+					<a href="{:U('saveBook', array('id' => $v['id']))}" class='mod'></a>
+					</div>
+				</td>
+			</tr>
+		</foreach>
+		<tr>
+			<td colspan='13' align='center' height='60'>{$show}</td>
+		</tr>
+	</table>
+</body>
+</html>

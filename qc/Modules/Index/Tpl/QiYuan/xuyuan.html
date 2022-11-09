@@ -1,0 +1,89 @@
+<block name="title"><title>{$system.0.WEBNAME}-在线祈福</title></block>
+<include file='Common:head'/>
+<script type="text/javascript">
+		var handleurl='<{:U(" QiYuan/Index/handle",'','')}>';
+	</script>
+	<script type="text/javascript">
+			function ch(obj){
+				obj.src='__URL__/yzm/'+Math.random();
+			}
+		</script>
+<!-- 主体开始 -->
+<div class="qf_min">
+	<div class="qf_pic">
+		<div class="inp">
+			<input type="checkbox"/>
+			<input type="checkbox"/>
+			<input type="checkbox"/>
+			<input type="checkbox"/>
+		</div>
+		<div class="inp_money">
+			<input type="checkbox" value="5"/>
+			<input type="checkbox" value="10"/>
+			<input type="checkbox" value="50"/>
+			<input type="checkbox" value="100"/>
+		</div>
+		<div class="qf_con">
+			<form action="{:U('handle')}" method="post">
+				<ul>
+					<li><span>祈愿佛祖：</span>
+						<select name="foname" id="">
+						<option value="释迦摩尼">释迦摩尼</option>
+						<option value="文殊广法天尊">文殊广法天尊</option>
+						<option value="普贤真人">普贤真人</option>
+						<option value="观音大士">观音大士</option>
+						<option value="弥勒佛">弥勒佛</option>
+						<option value="真武大帝">真武大帝</option>
+						<option value="文昌菩萨">文昌菩萨</option>
+						<option value="财神">财神</option>
+						<option value="魁星">魁星</option>
+					</select>
+					</li>
+					<li style="margin-left:300px; margin-top:-26px;"><span>燃香供养：</span>
+						<select name="xiang" id="">
+						<option value="普通香">普通香</option>
+						<option value="上等香">上等香</option>
+						
+					</select>
+					</li>
+					<li><span>弟子姓名：</span><input type='text' name="username" id='username'/></li>
+					<li style="margin-left:300px; margin-top:-26px;"><span>鲜花水果：</span>
+					<select name="guo" id="small">
+						<option value="普通水果">普通水果</option>
+						<option value="新鲜水果">新鲜水果</option>
+						
+					</select>&nbsp;&nbsp;
+					<select name="hua" id="small">
+						<option value="普通鲜花">普通鲜花</option>
+						<option value="上等鲜花">上等鲜花</option>
+						
+					</select>
+					</li>
+					
+					<li><span>来自何方：</span><input type='text' name="location" /></li>
+					<li style="margin-left:300px; margin-top:-26px;"><span>弟子顶礼：</span><input type='text' name="ding" /></li>
+					<li><span>祈愿回向：</span><textarea id='content' name='content' cols="68" rows="6"></textarea></li>
+					<li><span>　验证码：</span><input type='text' name="yzm" id="yzm"/><img style="padding-top:5px; margin-left:5px;" src="{:U(GROUP_NAME.'/QiYuan/yzm')}" onclick='ch(this)'/><span id="qif"><a href="">&nbsp;心诚则输入验证码，看不清则点击更换</a></span></li>
+					<li><input  type="submit"  value="" id="qf_sed"/></li>
+				</ul>
+			</form>
+			<div class="sm"><img src="__PUBLIC__/images/images/sm.jpg" style="margin-left:30px;"/></div>
+		</div>
+		<div class="con_list">
+			<div class="con_list_top"><img src="__PUBLIC__/images/images/list_top.jpg" style="margin-left:40px;"/></div>
+			<div class="con_list_min">
+			<volist name="list" id="v">
+				<div class="list_content_bj"><p>{$v.content}</p></div>
+				<div class="list_words"><span>这是来自<span style="font-weight: bold;"> {$v.location}</span> 的弟子<span style="font-weight: bold;">{$v.dzname}</span> 对<span style="font-weight: bold;">{$v.foname}</span> 的祈愿</span>&nbsp;&nbsp;</div>
+			</volist>
+			</div>
+		</div>
+		<div class="qf_page"><p>{$page}</p></div>
+	</div>
+	
+</div>
+<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>

@@ -1,0 +1,124 @@
+<block name="title"><title>{$_COOKIE['user']}-订单管理</title></block>
+<include file='Common:head'/>
+<!-- 主体开始 -->
+<div class="index_huiyuan"><p>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="{:U(GROUP_NAME.'/IndexUser/ziLiao')}">会员中心</a></p></div>
+<div class="huiyuan_main">
+	<!--左侧 start-->
+<include file='Common:left'/>
+<!--左侧 end-->
+	<div class="huiyuan_right">
+	<!--未完成的-->
+		<div class="noover">
+			<div class="noover_bj"></div>
+			<div class="con_dingdan">
+			<table class="table_dingd" style='width:720px;'>
+    <thead style="background-color:#CCCCCC;">
+        <tr>
+		<th class="">订单号</th>
+		<th style="width:110px;">名称</th>
+		<th class="">联系人</th>
+		<th class="">数量</th>
+		<th class="">金额</th>
+		<th class="">付款</th>
+		<th class="">发货</th>
+		<th class="">下单时间</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<notempty name="noover">
+		<volist name="noover" id="v">
+		<tr>
+			<td>{$v.booknum}</td>
+			<td style="width:110px;">{$v.name}</td>
+			<td style="width:45px;">{$v.contact}</td>
+			<td style="width:50px;">{$v.number}</td>
+			<td><span style="width:50px;">{$v.allprice}元</span></td>
+			<td><eq name="v.buystatus" value="0">
+			<form action="__PLAY__/alipayapi.php" method="post">
+					<input type="hidden" name="name" value="{$v.name}" />
+					<input type="hidden" name="booknum" value="{$v.booknum}" />
+					<input type="hidden" name="number" value="{$v.number}" />
+					<input type="hidden" name="allprice" value="{$v.allprice}" />
+					<input type="submit" value='' alt="立即支付" name="sub" class="zhifubao" />
+				
+				</form>
+			
+			<else/><img src="__PUBLIC__/images/images/ok.png"style="width:10px;"/></eq></td>
+			<td><eq name="v.bookstatus" value="0"><img src="__PUBLIC__/images/images/no.png" style="width:10px;"/><else/><img src="__PUBLIC__/images/images/ok.png" style="width:10px;"/></eq></td>
+			<td>{$v.addtime|date='y-m-d H:i',###}</td>
+			<td><eq name="v.bookstatus" value="0">
+				
+				<a href="{:U(GROUP_NAME.'/IndexUser/saveBook',array('id'=>$v['id']))}" class="ajax-get"><img src="__PUBLIC__/images/images/save.png"style="width:15px;"/></a>
+				</eq>
+				
+				<a href="{:U(GROUP_NAME.'/IndexUser/delBook',array('id'=>$v['id']))}" class="confirm ajax-get"><img src="__PUBLIC__/images/images/del.png"style="width:15px;"/></a>
+                </td>
+		</tr>
+		</volist>
+		<td colspan="9" class="text-center"><span style="margin-left:300px;">{$page}</span></td>
+		<else/>
+		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+		</notempty>
+		
+	</tbody>
+    </table> 
+			</div>
+		</div>
+		<!--未完成的-->
+		<!--完成的-->
+		<div class="over">
+			<div class="over_bj"></div>
+							<div class="con_dingdan">
+			<table class="table_dingd" style='width:720px;'>
+    <thead style="background-color:#CCCCCC;">
+        <tr>
+		<th class="">订单号</th>
+		<th class="">名称</th>
+		<th class="">联系人</th>
+		<th class="">数量</th>
+		<th class="">金额</th>
+		<th class="">付款</th>
+		<th class="">发货</th>
+		<th class="">下单时间</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+		<notempty name="over">
+		<volist name="over" id="v">
+		<tr>
+			<td>{$v.booknum}</td>
+			<td>{$v.name}</td>
+			<td>{$v.contact}</td>
+			<td>{$v.number}</td>
+			<td><span>{$v.allprice}元</span></td>
+			<td><eq name="v.buystatus" value="0"><img src="__PUBLIC__/images/images/no.png" style="width:10px;"/><else/><img src="__PUBLIC__/images/images/ok.png" style="width:10px;"/></eq></td>
+			<td><eq name="v.bookstatus" value="0"><img src="__PUBLIC__/images/images/no.png" style="width:10px;"/><else/><img src="__PUBLIC__/images/images/ok.png" style="width:10px;"/></eq></td>
+			<td>{$v.addtime|date='y-m-d H:i',###}</td>
+			<td>
+				<eq name="v.bookstatus" value="0">
+				
+				<a href="{:U(GROUP_NAME.'/IndexUser/saveBook',array('id'=>$v['id']))}" class="ajax-get"><img src="__PUBLIC__/images/images/save.png"style="width:15px;"/></a>
+				</eq>
+				<a href="{:U(GROUP_NAME.'/IndexUser/delBook',array('id'=>$v['id']))}" class="confirm ajax-get"><img src="__PUBLIC__/images/images/del.png"style="width:15px;"/></a>
+                </td>
+		</tr>
+		</volist>
+		<td colspan="9" class="text-center"><span style="margin-left:300px;">{$pages}</span></td>
+		<else/>
+		<td colspan="9" class="text-center"> aOh! 暂时还没有内容! </td>
+		</notempty>
+	</tbody>
+    </table> 
+			</div>
+		</div>
+		<!--完成的-->
+	</div>
+</div>
+
+	<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>

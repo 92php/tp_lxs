@@ -1,0 +1,39 @@
+<include file='Common:head'/>
+<!--中部 start-->
+<div class="hotel">
+	<!--当前位置 start-->
+	<div class="huiyi_option"><h5><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' => '1'))}">会议选址</a><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'2'))}">会议策划</a><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' => '3'))}">会议接待</a><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'4'))}">会议酒店</a><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'5'))}">会议设施</a></h5><h6>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="{:U(GROUP_NAME.'/Category/index')}">商务会议</a></h6></div>
+	<!--当前位置 end-->
+	<!--内容 start-->
+	<div class="hotelcontent">
+	<div class="hotel_content">
+		<div class="foshi_cont_top"><h6><a href="">{$list.0.fenlei}</a></h6></div>
+		<div class="fenlei_list">
+			
+						<ul>
+							<if condition="$list"> 
+								<foreach name='list' item='v'>
+								<li><a href="{:U(GROUP_NAME.'/Category/cateShow', array('id' => $v['id']))}">{$v.title}</a><span><a href="">[{$v.addtime|date='Y-m-d', ###}]</a></span></li>
+								</foreach>
+							<else/>暂无内容
+							</if>
+						</ul>
+					
+		</div>
+		<div class="page"><p>{$page}</p></div>
+	</div>
+	
+	<div class="huiyi_callme">
+		<div class="righthotel_title"><h2><a href="">联系我们</a></h2></div>
+	</div>
+
+</div>
+	</div>
+	<!--内容 end-->
+	
+<!--中部 end-->
+	<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>

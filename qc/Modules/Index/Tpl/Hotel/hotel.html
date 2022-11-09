@@ -1,0 +1,41 @@
+<include file='Common:head'/>
+<!--中部 start-->
+<div class="hotel">
+	<!--当前位置 start-->
+	<div class="hotel_option"><h6>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="{:U(GROUP_NAME.'/Hotel/index')}">酒店预定</a></h6></div>
+	<!--当前位置 end-->
+	<!--条件搜索 start-->
+
+	<!--条件搜索 end-->
+	<!--内容 start-->
+	<div class="hotel_list">
+		<div class="list">
+			<if condition='$list'>
+			<volist name='list' id='v'>
+			<ul>
+			<div class="list_con">
+				<li><a href="{:U(GROUP_NAME.'/Hotel/hotelShow', array('id' => $v['id']))}"><img src='<if condition='$v["max"]'>
+                            __ROOT__/uploads/Pic/{$v.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/></a><p class="list_word"><a href="{:U(GROUP_NAME.'/Hotel/hotelShow', array('id' => $v['id']))}" id="word_p"><if condition='$v["title"]'>{$v.title}<else/>产品展示</if></a><a href="{:U(GROUP_NAME.'/Hotel/hotelShow', array('id' => $v['id']))}" id="img_a"><img src="__PUBLIC__/images/images/read_more.jpg" id="go"/></a></p></li>
+			</div>
+			</ul>
+			</volist>
+			<else/>
+			暂无内容
+			</if>
+		</div>
+	</div>
+	<!--内容 end-->
+	<!-----------分页start---------->
+			<div class="list_page"><p>{$page}</p></div>
+		<!-----------分页end---------->
+	<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</div>
+<!--中部 end-->
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<block name="title"><title>{$list['title']}</title></block>
+<include file='Common:head'/>
+<!--中部 start-->
+<div class="hotel">
+	<!--当前位置 start-->
+	<div class="foshi_option"><h6>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="{:U(GROUP_NAME.'/Buddhist/index')}">佛事活动</a></h6></div>
+	<!--当前位置 end-->
+	<!--内容 start-->
+	<div class="hotelcontent">
+	<div class="hotel_content">
+		<div class="foshi_cont_top"><h6><a href="">佛事活动展示</a></h6></div>
+		<div class="cont_main">
+			<h1><a href="">{$list.title}</a></h1>
+			
+				
+					<div class="yudimg"><a style="display:block;width:300px;margin:50px auto;text-align:center;font-size:18px;color:#5e5e5e;text-decoration:none; margin-top:100px; margin-left:-320px;" href="javascript:void(0);" data-reveal-id="myModal"><img src="__PUBLIC__/images/images/me_yud.jpg" /></a></div>
+			
+			<!--弹出框-->
+			<div id="myModal" class="reveal-modal">
+				<h2>预定表单</h2>
+				<form action="{:U(GROUP_NAME.'/Buddhist/buddYud')}" method="post">
+				<p>佛事名称：<input name="title" type="text" class="input" size="20" value="{$list.title}"></p>
+				<p>　联系人：<input name="name" type="text" class="input" size="20"  value="{$_COOKIE['user']}"></p>
+				<p>联系电话：<input name="phone" type="text" class="input" size="35" value="{$_COOKIE['phone']}"></p>
+				<p>电子邮箱：<input name="email" type="text" class="input" size="35" value="{$_COOKIE['dzyx']}"></p>
+				<p>参会人数：<input name="shu" type="text" class="input" size="35" value=""></p>
+				<p>参会时间：<input class="Wdate" type="text" onClick="WdatePicker()" name="startime" style="width:180px;height:30px;"> </p>
+				<input type="hidden" name='type' value='佛事订单'/>
+				<input type="hidden" name='dizhi' value="{$_COOKIE['dizhi']}"/>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="sub" type="submit"  value="提交预定" id="tcyud"/></p></form>
+				<a class="close-reveal-modal">&#215;</a>
+			</div>
+			<!--弹出框-->
+			
+			<div class="con">
+					<div class="con_pic">
+						<img src='<if condition='$list["max"]'>
+                            __ROOT__/uploads/Pic/{$list.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/>
+					</div>
+					<div class="con_word"><p style='width:640px; margin:auto;word-break:break-all;'>{$list.content}</p></div>
+				</div>
+				<div class="conimg"><a style="display:block;width:300px;margin:50px auto;text-align:center;font-size:18px;color:#5e5e5e;text-decoration:none; margin-top:0px; margin-left:-60px;" href="javascript:void(0);" data-reveal-id="myModal"><img src="__PUBLIC__/images/images/me_yud.jpg" /></a></div>
+		</div>
+				<div class="page"><p style="width:340px; margin-left:0px;">上一篇：<a href="{:U(GROUP_NAME.'/Buddhist/buddShow', array('id' => $prev['id']))}"><if condition="$prev">{$prev.title}<else/>没有了</if></a></p><p style="width:340px; margin-right:0px;
+				margin-top:-37px;">下一篇：<a href="{:U(GROUP_NAME.'/Buddhist/buddShow', array('id' => $next['id']))}"><if condition="$next">{$next.title}<else/>没有了</if></a></p></div>
+	</div>
+	<div class="righthotel">
+		<div class="righthotel_title"><h2><a href="">推荐佛事</a></h2></div>
+		<div class="righthotel_list">
+			<ul>
+				<volist name="tuijie" id="v" offset="1" length='9'>
+				<li><a href="{:U(GROUP_NAME.'/Buddhist/buddShow', array('id' => $v['id']))}">{$v.title}</a></li>
+				</volist>
+			</ul>
+		</div>
+	</div>
+	<div class="callme">
+		<div class="righthotel_title"><h2><a href="">联系我们</a></h2></div>
+		<div>{$telme.content}</div>
+	</div>
+
+</div>
+	</div>
+	<!--内容 end-->
+	
+<!--中部 end-->
+<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>

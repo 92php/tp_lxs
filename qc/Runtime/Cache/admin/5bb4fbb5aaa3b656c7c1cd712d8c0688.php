@@ -1,0 +1,42 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>青春旅行社 后台登录</title>
+    <link rel="stylesheet" href="__PUBLIC__/Css/login.css" />
+    <link rel="stylesheet" href="__PUBLIC__/Js/JqueryUI/jquery-ui-1.9.2.min.css" />
+    <script type="text/javascript" src='__PUBLIC__/Js/jquery-1.8.2.min.js'></script>
+    <script type="text/javascript" src='__PUBLIC__/Js/JqueryUI/jquery-ui-1.9.2.min.js'></script>
+    <script type="text/javascript" src='__PUBLIC__/Js/login.js'></script>
+</head>
+<body>
+    <div id='top'>
+        <a href='http://www.houdunwang.com' target='_blank'>
+            <img src='__PUBLIC__/Images/blogo.png' width='270' height='52'/>
+        </a>
+        <a href='__ROOT__' class='home'>-前台首页-</a>
+    </div>
+    <div id='main'>
+        <div id="login">
+            <p class='user_logo'><b>登录</b></p>
+            <div class='login_form'>
+                <form action="<?php echo U('login');?>" method="post" name="login">
+                    <p>
+                        <label>用户名：</label>
+                        <input type="text" name="username" class='input-big'/>
+                    </p>
+                    <p>
+                        <label>密码：</label>
+                        <input type="password" name="pwd" class='input-big'/>
+                    </p>
+                    
+                    <p class='login_btn'>
+                        <input type='submit' name='submit' value='' class='loginbg'/>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id='dialog'></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<block name="title"><title>{$_COOKIE['user']}-会员密码修改</title></block>
+<include file='Common:head'/>
+<!-- 主体开始 -->
+<div class="index_huiyuan"><p>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="#">会员中心</a></p></div>
+<div class="huiyuan_main">
+	<!--左侧 start-->
+<include file='Common:left'/>
+<!--左侧 end-->
+	<div class="huiy_right">
+		<div class="right_ziliao_bj"><span>密码修改</span></div>
+		<div class="righr_con_str">
+			<div class="register_inpt" style="margin-top:70px;">
+		<form action="{:U(GROUP_NAME.'/IndexUser/runEditPwd')}" method="post">
+			<ul>
+				<li><span>原始密码：</span><input type='password' name="oldpassword" /><span id="lei"><a href="">&nbsp;请输入原始密码</a></span></li>
+				<li><span>设置密码：</span><input type='password' name="newpassword" /><span id="lei"><a href="">&nbsp;6位以上字符</a></span></li>
+				<li><span>确认密码：</span><input type='password' name="repassword" /><span id="lei"><a href="">&nbsp;俩次密码必须一致</a></span></li>
+				<li><input  type="submit" value="确认修改" id="sed"/></li>
+			</ul>
+		</form>
+	</div>
+		
+		</div>
+	</div>
+</div>
+
+	<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>

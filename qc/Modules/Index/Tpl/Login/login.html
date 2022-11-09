@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+<LINK rel=stylesheet type=text/css href="__PUBLIC__/images/calendar.css">
+<link href="__PUBLIC__/css/hotel_show.css" rel="stylesheet" type="text/css"/>
+<head>
+<p id="back-to-top"><a href="#top"><span></span></a></p>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>五台山青春旅行社</title>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src='__PUBLIC__/js/jquery.js'></script>
+<script type="text/javascript" src='__PUBLIC__/js/top.js'></script>
+<!--城市选择-->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery.suggest.css">
+ <script type="text/javascript" src="__PUBLIC__/js/jquery-1.4.2.min.js"></script>
+ <script type="text/javascript" src="__PUBLIC__/js/j.dimensions.js"></script>
+ <script type="text/javascript" src="__PUBLIC__/js/aircity.js"></script>
+ <script type="text/javascript" src="__PUBLIC__/js/j.suggest.js"></script>
+ <script type="text/javascript">
+ $(function(){
+ $("#arrcity").suggest(citys,{hot_list:commoncitys,dataContainer:'#arrcity_3word',onSelect:function(){$("#city2").click();}, attachObject:'#suggest'});
+$("#city2").suggest(citys,{hot_list:commoncitys,attachObject:"#suggest2"});
+});
+</script>
+<!--end-->
+<script type="text/javascript">
+	var t;
+	$(function(){
+		$("#ppt li").mouseover(function(){
+			clearTimeout(t);
+			var index=$(this).index();
+			$(".pic a").hide();
+			$(".pic a:eq("+index+")").show();
+			$("#num_pic").val(index);
+		});
+		$("#ppt li").mouseout(function(){
+			fun();
+		})
+		$(".pic a:gt(0)").hide();	
+		t=setTimeout("fun()",5000);
+	})
+	function fun(){
+		var num=$("#num_pic").val();
+		$(".pic a").hide();
+		$(".pic a:eq("+num+")").show();
+		if(num!=4){
+			$("#num_pic").val(Number(num)+1);
+		}else{
+			$("#num_pic").val(0);
+		}
+		t=setTimeout("fun()",2000);
+	}
+</script>
+<script type="text/javascript">
+			function ch(obj){
+				obj.src='__URL__/yzm/'+Math.random();
+			}
+		</script>
+<input name="btn" type="button" id="btn" onClick="toDesktop('http:\//www.wtsqc.com/','五台山青春旅行社')">
+</head>
+<body>
+
+<!--登录框-->
+<div class="login">
+ 	<span><img src="__PUBLIC__/images/images/word.jpg"></span>
+	<div class="zhuche">
+		<a href="{:U(GROUP_NAME.'/Login/index')}">马上登录</a>
+	</div>
+	<div class="editpwd">
+		<a href="{:U(GROUP_NAME.'/Index/register')}" id="zhuche_lj">立即注册</a>	
+	</div>
+	<div class="huiyuan">
+	<a href="{:U(GROUP_NAME.'/IndexUser/ziLiao')}">会员中心</a>|<a href="{:U(GROUP_NAME.'/IndexUser/index')}">订单管理</a>|<a href="{:U(GROUP_NAME.'/News/index', array('id' => $telme['id']))}">联系我们</a>
+	
+	</div>
+</div>
+<!--LOGO框-->
+<div class="logo">
+		<div class="logo_pic"><a href="__APP__"><img src="__PUBLIC__/images/images/logo.gif"/></a></div>
+		<div class="piao"><a href="__APP__"><img src="__PUBLIC__/images/images/logo_pw.jpg"/></a></div>
+		<div class="tel"><img src="__PUBLIC__/images/images/tel.gif"/></div>
+</div>
+
+<!-- 主体开始 -->
+<div class="login_ht">
+	<div class="login_bjpic"></div>
+	<div class="login_inpt">
+		<div class="login_deng"><p>您还不是我们的会员？</p><a href="{:U(GROUP_NAME.'/Index/register')}">免费注册</a></div>
+		<form action="{:U(GROUP_NAME.'/Login/login')}" method="post">
+			<ul>
+				<li><span>用户名：</span><input type='text' name="username" /></li>
+				<li><span>密　码：</span><input type='password' name="password" /><span id="lei"><a href="{:U(GROUP_NAME.'/Index/editPwd')}">&nbsp;忘记密码？</a></span></li>
+				<li><span>验证码：</span><input type='text' name="yzm" id="yzm"/><span id="lei"><img style='margin-left:8px;' src="{:U(GROUP_NAME.'/Login/yzm')}"  onclick='ch(this)'/></span></li>
+				<li><input type="checkbox" name="cookie" value="30" checked="checked"/><p id="cook">30天内自动登录</p></li>
+				<li><input  type="submit" value="登　　录" id="sub"/></li>
+				<li id="zhao">您还可以：<a href="{:U(GROUP_NAME.'/Index/editPwd')}">找回密码</a>或<a href="{:U(GROUP_NAME.'/Index/register')}">免费注册</a></li>
+			</ul>
+		</form>
+	</div>
+</div>
+	<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>

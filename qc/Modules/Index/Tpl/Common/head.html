@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link href="__PUBLIC__/css/index.css" rel="stylesheet" type="text/css" />
+<LINK rel=stylesheet type=text/css href="__PUBLIC__/images/calendar.css">
+<link href="__PUBLIC__/css/hotel_show.css" rel="stylesheet" type="text/css"/>
+<link href="__PUBLIC__/css/jingdian.css" rel="stylesheet" type="text/css"/>
+<head>
+<script type="text/javascript" src="__PUBLIC__/js/index.js"></script>
+<!--弹出图层-->
+<script type="text/javascript" src="__PUBLIC__/js/tck/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/tck/jquery.reveal.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
+<!--弹出图层-->
+<p id="back-to-top"><a href="#top"><span></span></a></p>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<block name="title"><title>{$system.0.WEBNAME}</title></block>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src='__PUBLIC__/js/jquery.js'></script>
+<script type="text/javascript" src='__PUBLIC__/js/top.js'></script>
+<!--城市选择-->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/jquery.suggest.css">
+ <script type="text/javascript" src="__PUBLIC__/js/jquery-1.4.2.min.js"></script>
+ <script type="text/javascript" src="__PUBLIC__/js/j.dimensions.js"></script>
+ <script type="text/javascript" src="__PUBLIC__/js/aircity.js"></script>
+ <script type="text/javascript" src="__PUBLIC__/js/j.suggest.js"></script>
+ <script type="text/javascript">
+ $(function(){
+ $("#arrcity").suggest(citys,{hot_list:commoncitys,dataContainer:'#arrcity_3word',onSelect:function(){$("#city2").click();}, attachObject:'#suggest'});
+$("#city2").suggest(citys,{hot_list:commoncitys,attachObject:"#suggest2"});
+});
+</script>
+<!--end-->
+<script type="text/javascript">
+	var t;
+	$(function(){
+		$("#ppt li").mouseover(function(){
+			clearTimeout(t);
+			var index=$(this).index();
+			$(".pic a").hide();
+			$(".pic a:eq("+index+")").show();
+			$("#num_pic").val(index);
+		});
+		$("#ppt li").mouseout(function(){
+			fun();
+		})
+		$(".pic a:gt(0)").hide();	
+		t=setTimeout("fun()",5000);
+	})
+	function fun(){
+		var num=$("#num_pic").val();
+		$(".pic a").hide();
+		$(".pic a:eq("+num+")").show();
+		if(num!=4){
+			$("#num_pic").val(Number(num)+1);
+		}else{
+			$("#num_pic").val(0);
+		}
+		t=setTimeout("fun()",2000);
+	}
+</script>
+<input name="btn" type="button" id="btn" onClick="toDesktop('http:\//www.wtsqc.com/','五台山青春旅行社')">
+</head>
+<body>
+
+<!--登录框-->
+<div class="login">
+ 	<span><img src="__PUBLIC__/images/images/word.jpg"></span>
+	<if condition="$_COOKIE['user']">
+	<div class="cookie">尊敬的 <a href="{:U(GROUP_NAME.'/IndexUser/index')}">{$_COOKIE['user']}</a> 您好！欢迎您访问五台山青春旅行社！[<a href="{:U(GROUP_NAME.'/Login/loginOut')}">安全退出</a>]</div>
+	<else/>
+	
+	<div class="zhuche">
+		<a href="{:U(GROUP_NAME.'/Login/index')}">马上登录</a>
+	</div>
+	<div class="editpwd">
+		<a href="{:U(GROUP_NAME.'/Index/register')}" id="zhuche_lj">立即注册</a>	
+	</div>
+	
+	</if>
+	<div class="huiyuan">
+	<a href="{:U(GROUP_NAME.'/IndexUser/ziLiao')}">会员中心</a>|<a href="{:U(GROUP_NAME.'/IndexUser/index')}">订单管理</a>|<a href="{:U(GROUP_NAME.'/News/index', array('id' => $telme['id']))}">联系我们</a>
+	
+	</div>
+</div>
+<!--LOGO框-->
+<div class="logo">
+		<div class="logo_pic"><a href="__APP__"><img src="__PUBLIC__/images/images/logo.gif"/></a></div>
+		<div class="piao"><a href="__APP__"><img src="__PUBLIC__/images/images/logo_pw.jpg"/></a></div>
+		<div class="tel"><img src="__PUBLIC__/images/images/tel.gif"/></div>
+</div>
+<!--导航条-->
+<div class="nav">
+	<div class="top_nav">
+		<ul>
+		  <li><a href="__APP__">网站首页</a></li>      
+		  <li><a href="{:U(GROUP_NAME.'/Hotel/index')}">酒店预定</a></li>      
+		  <li><a href="{:U(GROUP_NAME.'/Circuit/index')}">线路预定</a></li>
+		  <li><a href="{:U(GROUP_NAME.'/Carhire/index')}">旅游租车</a></li>
+		  <li><a href="{:U(GROUP_NAME.'/Attractions/index')}">山西景点</a></li>
+		  <li><a href="{:U(GROUP_NAME.'/Buddhist/index')}">佛事活动</a></li>
+		  <li><a href="{:U(GROUP_NAME.'/Category/index')}">商务会议</a></li>
+		  <li><a href="{:U(GROUP_NAME.'/QiYuan/index')}">在线祈福</a></li>
+		  <li><a href="{:U(GROUP_NAME.'/Goods/index')}">在线商城</a></li>
+  		</ul>
+	</div>
+	<div class="bot_nav">
+		<ul>
+		  <li><a href="#">国内机票</a></li>      
+		  <li><a href="#">国内酒店</a></li>      
+		  <li><a href="#">旅游景点</a></li>
+		  <li><a href="#">火 车 票</a></li>
+		  <li><a href="#">汽 车 票</a></li>
+		  <li><a href="#">便民服务</a></li>
+		  <li><a href="#">彩票乐园</a></li>
+		  <li><a href="#">演出票务</a></li>
+		  <li><a href="#">线下代购</a></li>
+  		</ul>
+	</div>
+</div>

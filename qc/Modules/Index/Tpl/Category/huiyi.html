@@ -1,0 +1,127 @@
+<include file='Common:head'/>
+<!--中部 start-->
+<div class="hotel">
+	<!--当前位置 start-->
+	<div class="huiyi_option"><h5><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' => '1'))}">会议选址</a><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'2'))}">会议策划</a><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' => '3'))}">会议接待</a><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'4'))}">会议酒店</a><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'5'))}">会议设施</a></h5><h6>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="{:U(GROUP_NAME.'/Category/index')}">商务会议</a></h6></div>
+	<!--当前位置 end-->
+	
+	<!--内容 start-->
+		<!---第一行--->
+		<div class="xuanzhi">
+			<div class="huiyi_read"><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' => '1'))}"><img src="__PUBLIC__/images/images/huiyi_more_read.jpg"/></a></div>
+			<div class="huiyi_neir">
+				<div class="huiyi_img"><img src='<if condition='$xuanzhi["0"]["max"]'>
+                            __ROOT__/uploads/Pic/{$xuanzhi.0.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/></div>
+					<div class="huiyi_list">
+						<ul>
+						<if condition="$xuanzhi"> 
+							<foreach name='xuanzhi' item='v'>
+							<li><a href="{:U(GROUP_NAME.'/Category/cateShow', array('id' => $v['id']))}">{$v.title}</a><span><a href="">[{$v.addtime|date='Y-m-d', ###}]</a></span></li>
+							</foreach>
+							<else/>暂无内容
+						</if>
+						</ul>
+					</div>
+			</div>
+		</div>
+		<!---第一行end--->
+		<!---第一行--->
+		<div class="xuanzhi">
+			<div class="cehua_read"><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'2'))}"><img src="__PUBLIC__/images/images/huiyi_more_read.jpg"/></a></div>
+			<div class="huiyi_neir">
+				<div class="huiyi_img"><img src='<if condition='$cehua["0"]["max"]'>
+                            __ROOT__/uploads/Pic/{$cehua.0.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/></div>
+					<div class="huiyi_list">
+						<ul>
+						<if condition="$cehua"> 
+							<foreach name='cehua' item='v'>
+							<li><a href="{:U(GROUP_NAME.'/Category/cateShow', array('id' => $v['id']))}">{$v.title}</a><span><a href="">[{$v.addtime|date='Y-m-d', ###}]</a></span></li>
+							</foreach>
+							<else/>暂无内容
+						</if>
+						</ul>
+					</div>
+			</div>
+		</div>
+		<!---第一行end--->
+		<!---第一行--->
+		<div class="xuanzhi">
+			<div class="jiedai_read"><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'3'))}"><img src="__PUBLIC__/images/images/huiyi_more_read.jpg"/></a></div>
+			<div class="huiyi_neir">
+				<div class="huiyi_img"><img src='<if condition='$jiedai["0"]["max"]'>
+                            __ROOT__/uploads/Pic/{$jiedai.0.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/></div>
+					<div class="huiyi_list">
+						<ul>
+							<if condition="$jiedai"> 
+								<foreach name='jiedai' item='v'>
+								<li><a href="{:U(GROUP_NAME.'/Category/cateShow', array('id' => $v['id']))}">{$v.title}</a><span><a href="">[{$v.addtime|date='Y-m-d', ###}]</a></span></li>
+								</foreach>
+								<else/>暂无内容
+						    </if>
+						</ul>
+					</div>
+			</div>
+		</div>
+		<!---第一行end--->
+		<!---第一行--->
+		<div class="xuanzhi">
+			<div class="jiudian_read"><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'4'))}"><img src="__PUBLIC__/images/images/huiyi_more_read.jpg"/></a></div>
+			<div class="huiyi_neir">
+				<div class="huiyi_img"><img src='<if condition='$jiudian["0"]["max"]'>
+                            __ROOT__/uploads/Pic/{$jiudian.0.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/></div>
+					<div class="huiyi_list">
+						<ul>
+							<if condition="$jiudian"> 
+								<foreach name='jiudian' item='v'>
+								<li><a href="{:U(GROUP_NAME.'/Category/cateShow', array('id' => $v['id']))}">{$v.title}</a><span><a href="">[{$v.addtime|date='Y-m-d', ###}]</a></span></li>
+								</foreach>
+								<else/>暂无内容
+						    </if>
+						</ul>
+					</div>
+			</div>
+		</div>
+		<!---第一行end--->
+		<!---第一行--->
+		<div class="xuanzhi">
+			<div class="sheshi_read"><a href="{:U(GROUP_NAME.'/Category/cateList', array('fenlei' =>'5'))}"><img src="__PUBLIC__/images/images/huiyi_more_read.jpg"/></a></div>
+			<div class="huiyi_neir">
+				<div class="huiyi_img"><img src='<if condition='$sheshi["0"]["max"]'>
+                            __ROOT__/uploads/Pic/{$sheshi.0.max}
+                        <else/>
+                            __PUBLIC__/images/images/pic.jpg
+                        </if>'/></div>
+					<div class="huiyi_list">
+						<ul>
+							<if condition="$sheshi"> 
+								<foreach name='sheshi' item='v'>
+								<li><a href="{:U(GROUP_NAME.'/Category/cateShow', array('id' => $v['id']))}">{$v.title}</a><span><a href="">[{$v.addtime|date='Y-m-d', ###}]</a></span></li>
+								</foreach>
+								<else/>暂无内容
+						    </if>
+						</ul>
+					</div>
+			</div>
+		</div>
+		<!---第一行end--->
+	<!--内容 end-->
+	<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</div>
+<!--中部 end-->
+
+</body>
+</html>

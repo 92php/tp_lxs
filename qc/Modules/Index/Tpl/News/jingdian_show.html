@@ -1,0 +1,36 @@
+<include file='Common:head'/>
+<!--中部 start-->
+<div class="hotel">
+	<!--当前位置 start-->
+	
+	<!--当前位置 end-->
+	<!--内容 start-->
+	<div class="hotelcontent">
+	<div class="hotel_content" style="margin-top:10px; width:950px;">
+		<div class="cont_top"><h6><a href="">{$list['type']}</a></h6></div>
+		<if condition="$list"> 
+		<div class="cont_main">
+			<h1><a href="">{$list['title']}</a></h1>
+			<div class="con">
+					
+					<div class="con_word"><span style='width:640px; margin:auto;word-break:break-all'>{$list['content']}</span></div>
+		  </div>
+	  </div><else/>暂无内容
+	  </if>
+		<div class="page"><p style="width:340px; margin-left:0px;">上一篇：<a href="{:U(GROUP_NAME.'/News/index', array('id' => $prev['id']))}"><if condition="$prev">{$prev.title}<else/>没有了</if></a></p><p style="width:340px; margin-right:0px;
+				margin-top:-37px;">下一篇：<a href="{:U(GROUP_NAME.'/News/index', array('id' => $next['id']))}"><if condition="$next">{$next.title}<else/>没有了</if></a></p></div>
+	</div>
+	
+	
+
+</div>
+
+	</div>
+	<!--内容 end-->
+	
+<!--中部 end-->
+<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>

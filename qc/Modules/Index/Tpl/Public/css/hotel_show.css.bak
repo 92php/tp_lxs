@@ -1,0 +1,372 @@
+
+.clear dt{
+	width:70px;
+	margin-left:20px;
+}
+.brand-sel-box{
+	width:500px;
+	padding-left:60px;
+	margin-top:-18px;
+}
+.allsel{
+	background-color: #006699;
+	color: #FFFFFF;
+	margin-left:-360px;
+}
+.brand-list a{
+	font-size: 14px;
+	color: #006699;
+	text-decoration: none;
+	margin-left:25px;
+	float: left;
+    height: 18px;
+    white-space: nowrap;
+}
+.brand-list a:hover{background-color: #006699;
+    color: #FFFFFF;
+    text-decoration: none;}
+.filter-item dt{width:50px;
+	margin-left:20px;}
+.clearfix{width:700px;
+	padding-left:40px;
+	margin-top:-18px;}
+.clearfix a{ font-size: 14px;
+	color: #006699;
+	text-decoration: none;
+	margin-left:25px;
+	float: left;
+    height: 18px;
+    white-space: nowrap;}
+.clearfix a:hover{background-color: #006699;
+    color: #FFFFFF;
+    text-decoration: none;}
+.sel{
+	background-color: #006699;
+	color: #FFFFFF;
+	margin-left:-615px;
+}
+.all{
+	background-color: #006699;
+	color: #FFFFFF;
+	margin-left:-290px;
+}
+.order{
+	background-color: #CCCCCC;
+	height:57px;
+
+}
+
+.orderclear dt{
+	width:70px;
+	margin-left:20px;
+	padding-top:22px;
+}
+.orderbrand-sel-box{
+	width:500px;
+	padding-left:60px;
+	margin-top:-18px;
+}
+.orderallsel{
+	background-color: #006699;
+	color: #FFFFFF;
+	margin-left:-360px;
+}
+.orderbrand-list a{
+	font-size: 14px;
+	color: #666666;
+	text-decoration: none;
+	margin-left:25px;
+	float: left;
+    height: 18px;
+    white-space: nowrap;
+}
+.orderbrand-list a:hover{background-color: #006699;
+    color: #FFFFFF;
+    text-decoration: none;}
+/*******************LIST************************/
+.hotel_list{
+	width:950px;
+	height:auto;
+	margin:auto;
+	margin-top:8px;
+}
+
+
+.list_con:hover{
+	border: thin solid #0099CC;
+}
+
+.list_word span a{
+	display:block;/*内联对象需加*/
+	width:142px;/*指定宽度*/
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* IE 专有属性，当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: bold;
+	color: #666666;
+	text-decoration: none;
+	background-position: center center;
+	position:relative;
+	float:left;
+	text-align: center;
+	line-height: 30px;
+	margin-top:15px;
+}
+.list ul{list-style-type:none;width:300px;margin-left:-29px;
+	height:300px;float:left;}
+.list_con{
+	margin-right:35px;
+	width: 300px;
+	height:300px;
+	border: thin solid #CCCCCC;
+	margin-bottom:10px;
+	
+}
+
+.list_con li{
+	float:left;
+	width: 234px;
+	margin-right: 10px;
+	font-size: 13px;
+	line-height: 45px;
+	text-align: center;
+}
+.list_con li a{ width:260px;height:210px;	margin-left:20px;
+	}
+.list_con li a img{
+	border: thin solid #CCCCCC;width:260px;height:210px;margin-top:20px;
+}
+.list_word{ width:300px; height:40px; margin-top:15px;}
+.list_word a{  width:260px; height:40px;}
+#img_a{ width:80px; height:32px; margin-left:110px;}
+#go{
+	width:77px;
+	height:31px;
+	margin-top:3px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+
+}
+#word_p{
+	height:40px;
+	margin-left:-8px;
+	width:130px;
+	line-height:60px;
+	font-family: "宋体";
+	font-size: 16px;
+	font-weight: bold;
+}
+#word_pic{
+	margin-left:145px;
+	margin-top:-30px;
+}
+/*******************SHOW************/
+.hoteloption{
+	background-image: url(../images/images/hotel_bj.jpg);
+	width:950px;
+	height:78px;
+	margin:auto;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+.hoteloption h6{
+	float:left;
+	text-align:center;
+	vertical-align:middle;
+	padding-top:5px;
+	font-family: "宋体";
+	font-size: 14px;
+	color: #999999;
+	text-decoration: none;
+	margin-left:750px;
+}
+.hoteloption h6 a{
+	font-size: 12px;
+	color: #666666;
+	text-decoration: none;
+}
+.hotelcontent{ margin:auto; width:950px;}
+.hotel_content{
+	width:685px;
+	height:auto;
+	border: thin solid #CCCCCC;
+	margin-top:20px;
+	margin-bottom: 15px;
+}
+.cont_top{
+	background-color: #7FA7BF;
+	height:40px;
+	margin-top:-29px;
+}
+.cont_top h6 a{
+	font-family: "宋体";
+	font-size: 16px;
+	color: #FFFFFF;
+	text-decoration: none;
+	line-height: 40px;
+	background-position: center;
+	margin-left:25px;
+}
+.cont_main{  margin:auto; height:auto;}
+.cont_main h1{ margin:auto; margin-top:20px;text-align: center;
+	vertical-align: middle;}
+.cont_main h1 a{
+	font-family: "宋体";
+	color: #666666;
+	text-decoration: none;
+	line-height: 40px;
+	background-position: center center;
+	margin:auto;
+	text-align: center;
+	vertical-align: middle;
+}
+.cont_yud{
+	height:120px;
+	background-color: #EBEBEB;
+	margin-top:20px;
+}
+#pic_yud img{
+ margin-left:450px;
+ margin-top:-180px;
+}
+.dl{
+	width:150px;
+	margin-left:35px;
+	padding-top:20px;
+}
+.clist a{
+	font-size: 14px;
+	color: #006699;
+	text-decoration: none;
+}
+.dl-tel{
+	width:150px;
+	margin-left:185px;
+	margin-top:-85px;
+}
+.dll-tel{
+	width:150px;
+	margin-left:185px;
+	margin-top:40px;
+}
+.locatin{ width:180px; margin-top:30px; padding-top:30px;}
+.locatin span{ margin-left:30px;}
+.locatin a{color: #0099CC;text-decoration: none;}
+.price{  width:180px; margin-top:30px; padding-bottom:35px;}
+.price span{ margin-left:30px;}
+.price a{color: #0099CC;text-decoration: none;}
+.grade{  width:180px; margin-top:-100px; margin-left:210px;}
+.grade span{ margin-left:30px;}
+.grade a{color: #0099CC;text-decoration: none;}
+
+.yudtel{  width:260px; margin-top:28px; padding-bottom:35px; margin-left:210px;}
+.yudtel span{ margin-left:30px;}
+.yudtel a{color: #0099CC;text-decoration: none;}
+.yudimg{ width:135px; height:45px; margin-left:500px; margin-top:-90px;}
+/******************内容显示*************************/
+.con_pic{ width:300px; height:230px; margin:auto; margin-top:20px; margin-bottom:20px;}
+.con_word{width:660px; margin:auto;}
+.con_word p{
+	font-family: "新宋体";
+	font-size: 14px;
+	line-height: 25px;
+	color: #333333;
+	text-decoration: none;
+}
+.conimg{margin:auto; width:132px; margin-top:30px; margin-bottom:20px; }
+.page{
+	background-color: #CCCCCC; height:40px;margin:auto;
+}
+.page p{
+	margin:auto;
+	margin-top:30px;
+	font-size: 16px;
+	font-style: normal;
+	line-height: 40px;
+	font-weight: bold;
+	color: #666666;
+	text-decoration: none;
+	background-position: center center;
+	right: 300px;
+	text-align: center;
+	vertical-align: middle;
+}
+.page p {
+	display:block;/*内联对象需加*/
+	width:225px;/*指定宽度*/
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* IE 专有属性，当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+	font-size: 14px;
+}
+/*******************************右侧显示**************************************/
+.righthotel{
+	border: thin solid #CCCCCC;
+	width:260px;
+	height:300px;
+	margin-left:690px;
+	margin-top:20px;
+	margin-top:-611px;
+	position: absolute;
+	top:935px;
+}
+.callme{ width:260px;
+	height:300px;
+	
+	margin-left:690px;
+	margin-top:30px;
+	margin-top:-295px;
+	position: absolute;
+	top:945px;}
+.righthotel_title{
+	height:40px;
+	background-color: #DFDFDF;
+	margin-top:-18px;
+}
+.righthotel_list ul li{
+	margin-left:-20px;
+	width:190px;
+	height:25px;
+	line-height: 25px;
+}
+.righthotel_list ul li a{
+	font-family: "宋体";
+	font-size: 14px;
+	color: #333333;
+	text-decoration: none;
+	display:block;/*内联对象需加*/
+	width:190px;/*指定宽度*/
+	height:270px;/*指定宽度*/
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 强制在同一行内显示所有文本，直到文本结束或者遭遇 br 对象。不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;/* IE 专有属性，当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+.righthotel_title h2{ width:150px;}
+.righthotel_title h2 a{
+	font-family: "宋体";
+	font-size: 18px;
+	color: #333333;
+	text-decoration: none;
+	margin-left:15px;
+	margin-top:10px;
+	line-height: 40px;
+	background-position: center;
+}
+/******************景点**********/
+.jingdian_callme{
+	width:260px;
+	height:300px;
+	margin-left:690px;
+	margin-top:20px;
+	margin-top:-612px;
+	position: absolute;
+	top:935px;
+}

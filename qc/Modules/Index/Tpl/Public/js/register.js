@@ -1,0 +1,122 @@
+$(function () {
+
+	//点击刷新验证码
+	var verifyUrl = $('#verify-img').attr('src');
+	
+	$('#verify-img').click(function () {
+		$(this).attr('src', verifyUrl + '?' + Math.random());
+	});
+
+	//jQuery Validate 表单验证
+	
+	/**
+	 * 添加验证方法
+	 * 以字母开头，5-17 字母、数字、下划线"_"
+	 */
+	jQuery.validator.addMethod("user", function(value, element) {   
+	    var tel = /^[a-zA-Z][\w]{4,16}$/;
+	    return this.optional(element) || (tel.test(value));
+	}, "以字母开头，5-17 字母、数字、下划线'_'");
+
+	$('form[name=register]').validate({
+		errorElement : 'span',
+		success : function (label) {
+			label.addClass('success');
+		},
+		rules : {
+			email : {
+				required : true,
+				email:true
+				//异步验证账号
+				/* remote : {
+					url : checkAccount,
+					type : 'post',
+					dataType : 'json',
+					data : {
+						email : function () {
+							return $('#email').val();
+						}
+					}
+				} */
+			},
+			pwd : {
+				required : true,
+				user : true
+			},
+			repwd : {
+				required : true,
+				equalTo : "#pwd"
+			},
+			/* phone : {
+				required : true,
+				rangelength : [2,10],
+				//异步验证昵称
+				remote : {
+					url : checkUname,
+					type : 'post',
+					dataType : 'json',
+					data : {
+						uname : function () {
+							return $('#uname').val();
+						}
+					}
+				}
+			},
+			name : {
+				required : true,
+				rangelength : [2,10],
+				//异步验证昵称
+				remote : {
+					url : checkUname,
+					type : 'post',
+					dataType : 'json',
+					data : {
+						uname : function () {
+							return $('#uname').val();
+						}
+					}
+				}
+			},
+			qq : {
+				required : true,
+				rangelength : [2,10],
+				//异步验证昵称
+				remote : {
+					url : checkUname,
+					type : 'post',
+					dataType : 'json',
+					data : {
+						uname : function () {
+							return $('#uname').val();
+						}
+					}
+				}
+			},
+			 */
+		},
+		messages : {
+			email : {
+				required : '账号不能为空',
+				/* remote : '账号已存在',  */
+				email:'邮箱格式不正确'
+			},
+			 pwd : {
+				required : '密码不能为空'
+			},
+			repwd : {
+				required : '请确认密码',
+				equalTo : '两次密码不一致'
+			},
+			/*uname : {
+				required : '请填写您的昵称',
+				rangelength : '昵称在2-10个字之间',
+				remote : '昵称已存在'
+			},
+			verify : {
+				required : ' ',
+				remote : ' '
+			} */
+		}
+	});
+
+});

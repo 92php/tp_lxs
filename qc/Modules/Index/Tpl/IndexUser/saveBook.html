@@ -1,0 +1,40 @@
+<block name="title"><title>{$_COOKIE['user']}-{$list.0.type}订单修改</title></block>
+<include file='Common:head'/>
+<!-- 主体开始 -->
+<div class="index_huiyuan"><p>当前位置：&nbsp;<a href="__GROUP__">首页</a>&nbsp; &raquo;&nbsp;<a href="#">会员中心</a></p></div>
+<div class="huiyuan_main">
+	<!--左侧 start-->
+<include file='Common:left'/>
+<!--左侧 end-->
+	<div class="huiy_right">
+		<div class="right_ziliao_bj"><span>{$list.0.type}订单修改</span></div>
+		<div class="righr_con_str">
+			<div class="register_inpt" style="margin-top:70px;">
+		<form action="{:U(GROUP_NAME.'/IndexUser/runSaveBook')}" method="post">
+			<ul>
+				<li style="width:390px; margin-bottom:15px;"><span>订单号码：</span><span>{$list.0.booknum}</span><span id="lei"><a href="" style="margin-left:55px;">&nbsp;订单号码（不可修改）</a></span></li>
+				<li style="width:390px; margin-bottom:15px;"><span>订单名称：</span><span>{$list.0.name}</span><span id="lei"><a href="" style="margin-left:55px;">&nbsp;订单名称（不可修改）</a></span></li>
+				<li style="width:390px; margin-bottom:15px;"><span>商品单价：</span><span>￥{$list.0.price}元</span><span id="lei"><a href="" style="margin-left:55px;">&nbsp;商品单价（不可修改）</a></span></li>
+				
+				<li><span>购买数量：</span><input type='text' name="number" value="{$list.0.number}" id="yzm"/></li>
+				
+				<li><span>联系姓名：</span><input type='text' name="contact" value="{$list.0.contact}" id="yzm"/></li>
+				
+				<li><span>联系电话：</span><input type='text' name="tel" value="{$list.0.tel}"/></li>
+				<li><span>收货地址：</span><input type='text' name="action" value="{$list.0.action}"/><span id="lei"><a href="">&nbsp;地址必须正确，否则无法收货</a></span></li>
+				<input type="hidden" name="booknum" value="{$list.0.booknum}">
+				<input type="hidden" name="price" value="{$list.0.price}">
+				<li><input  type="submit" value="确认修改" id="sed"/></li>
+			</ul>
+		</form>
+	</div>
+		
+		</div>
+	</div>
+</div>
+
+	<!--页脚 start-->
+<include file='Common:foot'/>
+<!--页脚 end-->
+</body>
+</html>
